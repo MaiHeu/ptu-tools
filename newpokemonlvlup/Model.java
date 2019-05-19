@@ -1,7 +1,7 @@
 package newpokemonlvlup;
 
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.InputStreamReader;
 import java.io.IOException;
 
 import org.json.simple.JSONArray;
@@ -27,7 +27,7 @@ public class Model
 		{
 			JSONParser parser = new JSONParser();
 			//TODO: Pfad in relativen Pfad
-			Object file = parser.parse(new FileReader("C:\\Users\\Maik\\eclipse-workspace\\Laptop\\src\\newpokemonlvlup\\levelup.json"));
+			Object file = parser.parse(new InputStreamReader(getClass().getResourceAsStream("levelup.json")));
 			JSONObject temp = (JSONObject) file;
 			setLeveldaten((JSONArray) temp.get("XP"));
 		} catch (FileNotFoundException e)
