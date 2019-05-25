@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Gradle : 1 : 1-0.0.1-alpha.war">
+    <output-path>$PROJECT_DIR$/pokemongenerator/build/libs</output-path>
+    <properties id="gradle-properties">
+      <options external-project-path="$PROJECT_DIR$/pokemongenerator" />
+    </properties>
+    <root id="archive" name="1-0.0.1-alpha.war">
+      <element id="artifact" artifact-name="Gradle : 1 : 1-0.0.1-alpha.war (exploded)" />
+    </root>
+  </artifact>
+</component>
