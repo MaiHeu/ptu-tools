@@ -1,4 +1,4 @@
-package newpokemonlvlup;
+package pokemonlevelup;
 
 public class Pokemon
 {
@@ -62,7 +62,7 @@ public class Pokemon
 	}
 
 	//Methoden
-	public void levelPokemon(int days, int bonusXp)
+	public void  levelPokemon(int days, int bonusXp)
 	{
 		int i = 0;
 		this.setCurrentLevel(currentXp);
@@ -74,14 +74,17 @@ public class Pokemon
 			if(currentLevel == 1 && bonusXp == 0)
 			{
 				currentXp++;
+				System.out.println("Current XP: "+currentXp);
 			}
-			if(currentLevel == 1 && bonusXp > 0)
+			else if(currentLevel == 1 && bonusXp > 0)
 			{
 				currentXp = currentXp + currentLevel + bonusXp;
+				System.out.println("Current XP: "+currentXp);
 			}
 			else
 			{
 				currentXp = currentXp + (currentLevel/2)+bonusXp;
+				System.out.println("Current XP: "+currentXp);
 			}
 			
 			if(currentXp >= toNextLevel)

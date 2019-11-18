@@ -1,4 +1,4 @@
-package newpokemonlvlup;
+package pokemonlevelup;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -7,14 +7,18 @@ import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
 import java.awt.Toolkit;
+import javax.swing.JCheckBox;
 
+@SuppressWarnings("serial")
 public class Gui extends JFrame
 {
 
 	private JPanel contentPane;
 	private JLabel lblTrainersCommand;
+	@SuppressWarnings("rawtypes")
 	private JComboBox comboBoxTrainersCommand;
 	private JSeparator separator;
 	private JLabel lblPkmLvl;
@@ -32,6 +36,7 @@ public class Gui extends JFrame
 	private JLabel labelDisplayBonusXP;
 	private JButton btnRun;
 	private JLabel labelDisplayPokemonLevel;
+	private JCheckBox checkboxTrainerChampions;
 
 	/**
 	 * Create the frame.
@@ -65,6 +70,7 @@ public class Gui extends JFrame
 		contentPane.add(getLabelDisplayBonusXP());
 		contentPane.add(getBtnRun());
 		contentPane.add(getLabelDisplayPokemonLevel());
+		contentPane.add(getCheckboxTrainerChampions());
 	}
 
 	JLabel getLblTrainersCommand()
@@ -77,6 +83,7 @@ public class Gui extends JFrame
 		return lblTrainersCommand;
 	}
 
+	@SuppressWarnings("rawtypes")
 	JComboBox getComboBoxTrainersCommand()
 	{
 		if (comboBoxTrainersCommand == null)
@@ -93,7 +100,7 @@ public class Gui extends JFrame
 		if (separator == null)
 		{
 			separator = new JSeparator();
-			separator.setBounds(22, 65, 280, 2);
+			separator.setBounds(12, 94, 290, 2);
 		}
 		return separator;
 	}
@@ -103,7 +110,7 @@ public class Gui extends JFrame
 		if (lblPkmLvl == null)
 		{
 			lblPkmLvl = new JLabel("Pokemon Level:");
-			lblPkmLvl.setBounds(12, 80, 115, 16);
+			lblPkmLvl.setBounds(12, 132, 115, 16);
 		}
 		return lblPkmLvl;
 	}
@@ -134,7 +141,7 @@ public class Gui extends JFrame
 		if (lblDaysTraining == null)
 		{
 			lblDaysTraining = new JLabel("Days of Training:");
-			lblDaysTraining.setBounds(12, 138, 115, 16);
+			lblDaysTraining.setBounds(12, 161, 115, 16);
 		}
 		return lblDaysTraining;
 	}
@@ -144,7 +151,7 @@ public class Gui extends JFrame
 		if (textDaysTraining == null)
 		{
 			textDaysTraining = new JTextField();
-			textDaysTraining.setBounds(149, 135, 53, 22);
+			textDaysTraining.setBounds(149, 158, 53, 22);
 			textDaysTraining.setColumns(10);
 		}
 		return textDaysTraining;
@@ -155,7 +162,7 @@ public class Gui extends JFrame
 		if (separator2 == null)
 		{
 			separator2 = new JSeparator();
-			separator2.setBounds(12, 173, 290, 2);
+			separator2.setBounds(12, 190, 290, 2);
 		}
 		return separator2;
 	}
@@ -165,7 +172,7 @@ public class Gui extends JFrame
 		if (lblPkmFinalLevel == null)
 		{
 			lblPkmFinalLevel = new JLabel("Pokemon Final Level:");
-			lblPkmFinalLevel.setBounds(12, 188, 143, 16);
+			lblPkmFinalLevel.setBounds(12, 205, 143, 16);
 		}
 		return lblPkmFinalLevel;
 	}
@@ -175,7 +182,7 @@ public class Gui extends JFrame
 		if (lblPkmFinalXp == null)
 		{
 			lblPkmFinalXp = new JLabel("Pokemon Final XP:");
-			lblPkmFinalXp.setBounds(12, 209, 129, 16);
+			lblPkmFinalXp.setBounds(12, 234, 129, 16);
 		}
 		return lblPkmFinalXp;
 	}
@@ -185,7 +192,7 @@ public class Gui extends JFrame
 		if (labelDisplayFinalLevel == null)
 		{
 			labelDisplayFinalLevel = new JLabel("");
-			labelDisplayFinalLevel.setBounds(149, 188, 56, 16);
+			labelDisplayFinalLevel.setBounds(146, 205, 56, 16);
 		}
 		return labelDisplayFinalLevel;
 	}
@@ -195,7 +202,7 @@ public class Gui extends JFrame
 		if (labelDisplayFinalXp == null)
 		{
 			labelDisplayFinalXp = new JLabel("");
-			labelDisplayFinalXp.setBounds(149, 209, 56, 16);
+			labelDisplayFinalXp.setBounds(146, 234, 56, 16);
 		}
 		return labelDisplayFinalXp;
 	}
@@ -215,7 +222,7 @@ public class Gui extends JFrame
 		if (lblBonusXp == null)
 		{
 			lblBonusXp = new JLabel("Bonus XP:");
-			lblBonusXp.setBounds(12, 36, 66, 16);
+			lblBonusXp.setBounds(12, 65, 66, 16);
 		}
 		return lblBonusXp;
 	}
@@ -225,7 +232,7 @@ public class Gui extends JFrame
 		if (labelDisplayBonusXP == null)
 		{
 			labelDisplayBonusXP = new JLabel("");
-			labelDisplayBonusXP.setBounds(146, 36, 56, 16);
+			labelDisplayBonusXP.setBounds(146, 65, 56, 16);
 		}
 		return labelDisplayBonusXP;
 	}
@@ -235,7 +242,7 @@ public class Gui extends JFrame
 		if (btnRun == null)
 		{
 			btnRun = new JButton("Run!");
-			btnRun.setBounds(214, 138, 88, 16);
+			btnRun.setBounds(214, 161, 88, 16);
 		}
 		return btnRun;
 	}
@@ -245,8 +252,15 @@ public class Gui extends JFrame
 		if (labelDisplayPokemonLevel == null)
 		{
 			labelDisplayPokemonLevel = new JLabel("");
-			labelDisplayPokemonLevel.setBounds(149, 80, 56, 16);
+			labelDisplayPokemonLevel.setBounds(146, 132, 56, 16);
 		}
 		return labelDisplayPokemonLevel;
+	}
+	JCheckBox getCheckboxTrainerChampions() {
+		if (checkboxTrainerChampions == null) {
+			checkboxTrainerChampions = new JCheckBox("Trainer of Champions");
+			checkboxTrainerChampions.setBounds(146, 36, 156, 25);
+		}
+		return checkboxTrainerChampions;
 	}
 }

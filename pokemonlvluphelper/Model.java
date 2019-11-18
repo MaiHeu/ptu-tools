@@ -1,8 +1,8 @@
-package newpokemonlvlup;
+package pokemonlevelup;
 
 import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -16,8 +16,6 @@ public class Model
 	public Model()
 	{
 		initLeveldaten();
-		
-		
 	}
 	
 	
@@ -26,9 +24,7 @@ public class Model
 		try
 		{
 			JSONParser parser = new JSONParser();
-			//TODO: Pfad in relativen Pfad
-			Object file = parser.parse(new InputStreamReader(getClass().getResourceAsStream("levelup.json")));
-			JSONObject temp = (JSONObject) file;
+			Object file = parser.parse(new InputStreamReader(getClass().getResourceAsStream("levelup.json")));			JSONObject temp = (JSONObject) file;
 			setLeveldaten((JSONArray) temp.get("XP"));
 		} catch (FileNotFoundException e)
 		{
